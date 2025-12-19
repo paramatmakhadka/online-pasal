@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Frontend from "../../layout/Frontend";
 import { Link, useParams } from "react-router-dom";
+import { CartContext } from "./CartContext";
 
 function Category() {
+	let { state, dispatch } = useContext(CartContext)
 	let [data, setData] = useState([]);
 	let { cid } = useParams()
 	useEffect(() => {
@@ -30,7 +32,7 @@ function Category() {
 												</Link>
 												<p>{a.price}</p>
 												<p>{a.title}</p>
-												<button className="btn btn-primary btn-sm">
+												<button className="btn btn-primary btn-sm" onClick={() => dispatch({ type: 'addtocart', payload: a })}>
 													Add to Cart
 												</button>
 											</div>
