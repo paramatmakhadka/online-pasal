@@ -1,7 +1,17 @@
-import React from "react";
-import Phone from "../assets/telephone.svg";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../Pages/frontend/CartContext";
 function Header() {
+	let { state, dispatch } = useContext(CartContext)
+	let [data, setData] = useState([])
+	useEffect(() => {
+		async function cData() {
+			const catData = await fetch('https://dummyjson.com/products/categories')
+			const categoryData = await catData.json()
+			setData(categoryData)
+		}
+		cData()
+	}, [])
 	return (
 		<>
 			<header className="py-3">
@@ -22,12 +32,9 @@ function Header() {
 									placeholder="Search"
 									aria-label="Search"
 								/>
-								<button class="btn btn-outline-success" type="submit">
+								<button class="btn btn-outline-dark" type="submit">
 									Search
 								</button>
-								<Link className="btn btn-danger g-4" type="submit" to="/login">
-									Login
-								</Link>
 							</form>
 						</div>
 					</div>
@@ -47,13 +54,26 @@ function Header() {
 									About Us
 								</Link>
 							</li>
-
-							<li className="nav-item">
-								<a className="nav-link disabled" aria-disabled="true">
-									Disabled
-								</a>
-							</li>
+							{data.slice(0, 7).map((a) => (
+								<li key={a.slug} className="nav-item">
+									<Link className="nav-link" to={`/category/${a.slug}`}>
+										{a.name}
+									</Link>
+								</li>
+							))}
 						</ul>
+						<Link className="btn btn-danger ms-5" type="submit" to="/login">
+							Login
+						</Link>
+						<Link type="button" className="btn btn-primary position-relative ms-5 me-3" to="/cart" >
+							<i class="bi bi-bag-fill"></i>
+							<span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+								{state.cart.length}
+								<span className="visually-hidden">unread messages</span>
+							</span>
+						</Link>
+
+
 					</div>
 				</div>
 			</nav>

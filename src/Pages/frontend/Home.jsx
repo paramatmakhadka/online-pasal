@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Frontend from "../../layout/Frontend";
+import { CartContext } from "./CartContext";
 
 function Home() {
+	let { state, dispatch } = useContext(CartContext)
 	let [data, setData] = useState([]);
 	useEffect(() => {
 		async function getData() {
@@ -24,7 +26,7 @@ function Home() {
 										<img src={a.thumbnail} alt={a.title} className="w-100" />
 										<p>{a.price}</p>
 										<p>{a.title}</p>
-										<button className="btn btn-primary btn-sm">
+										<button className="btn btn-primary btn-sm" onClick={() => dispatch({ type: 'addtocart', payload: a })}>
 											Add to Cart
 										</button>
 									</div>

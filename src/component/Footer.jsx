@@ -22,16 +22,14 @@ function Footer() {
 									/>
 								</a>
 								<p>
-									We are an award-winning creative agency, dedicated to the best
-									result in web design, promotion, business consulting, and
-									marketing.
+									We are an award-winning ecommerce platform, dedicated to the providing best service and products at affordable rate.
 								</p>
 								{/* Rights*/}
 								<p className="rights">
 									<span>©&nbsp; </span>
-									<span className="copyright-year">2018</span>
+									<span className="copyright-year">2025</span>
 									<span>&nbsp;</span>
-									<span>Waves</span>
+									<span>Online Pasal</span>
 									<span>.&nbsp;</span>
 									<span>All Rights Reserved.</span>
 								</p>
@@ -41,19 +39,19 @@ function Footer() {
 							<h5>Contacts</h5>
 							<dl className="contact-list">
 								<dt>Address:</dt>
-								<dd>798 South Park Avenue, Jaipur, Raj</dd>
+								<dd>798 South Park Avenue, NSW, Aus</dd>
 							</dl>
 							<dl className="contact-list">
 								<dt>email:</dt>
 								<dd>
-									<a href="mailto:#">dkstudioin@gmail.com</a>
+									<a href="mailto:#">hell.admin@gmail.com</a>
 								</dd>
 							</dl>
 							<dl className="contact-list">
 								<dt>phones:</dt>
 								<dd>
-									<a href="tel:#">https://karosearch.com</a> <span>or</span>{" "}
-									<a href="tel:#">https://karosearch.com</a>
+									<a href="tel:#">01-5511221</a> <span>or</span>{" "}
+									<a href="tel:#">01-4422114</a>
 								</dd>
 							</dl>
 						</div>

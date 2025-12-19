@@ -2,11 +2,13 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Pages/frontend/Home";
 import About from "./Pages/frontend/About";
+import Category from "./Pages/frontend/Category";
 import Login from "./Pages/admin/Login";
 import Dashboard from "./Pages/admin/Dashboard";
 import AddCategory from "./Pages/admin/AddCategory"
 import AddProduct from "./Pages/admin/AddProduct";
 import Orders from "./Pages/admin/Orders";
+import Cart from "./Pages/frontend/Cart";
 
 function App() {
 	return (
@@ -16,6 +18,8 @@ function App() {
 					{/*  frontend */}
 					<Route path="/" element={<Home />} />
 					<Route path="/about" element={<About />} />
+					<Route path="/category/:cid" element={<Category />} />
+					<Route path="/cart" element={<Cart />} />
 
 					{/* backend */}
 					<Route path="/login" element={<Login />} />
