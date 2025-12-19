@@ -25,7 +25,9 @@ function Category() {
 									{data.map((a) => (
 										<div className="col-lg-3" key={a.id}>
 											<div className="p-3 shadow">
-												<img src={a.thumbnail} alt={a.title} className="w-100" />
+												<Link to={`/product/${a.id}`}>
+													<img src={a.thumbnail} alt={a.title} className="w-100" />
+												</Link>
 												<p>{a.price}</p>
 												<p>{a.title}</p>
 												<button className="btn btn-primary btn-sm">

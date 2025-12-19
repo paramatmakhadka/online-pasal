@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Pages/frontend/Home";
 import About from "./Pages/frontend/About";
+import Product from "./Pages/frontend/Product";
 import Category from "./Pages/frontend/Category";
 import Login from "./Pages/admin/Login";
 import Dashboard from "./Pages/admin/Dashboard";
@@ -19,6 +20,7 @@ function App() {
 					<Route path="/" element={<Home />} />
 					<Route path="/about" element={<About />} />
 					<Route path="/category/:cid" element={<Category />} />
+					<Route path="/product/:pid" element={<Product />} />
 					<Route path="/cart" element={<Cart />} />
 
 					{/* backend */}
