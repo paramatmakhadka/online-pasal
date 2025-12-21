@@ -1,26 +1,27 @@
 import React from "react";
+import Logo from "../assets/logo-nobg.png"
+import { Link } from "react-router-dom";
 
 function Footer() {
 	return (
 		<>
 			<footer
-				className="section footer-classic context-dark bg-image text-white"
+				className="section footer-dark context-dark bg-dark text-white"
 				style={{ background: "#2d3246" }}
 			>
 				<div className="container">
 					<div className="row row-30">
 						<div className="col-md-4 col-xl-5">
 							<div className="pr-xl-4">
-								<a className="brand" href="index.html">
+
+								<Link to="/">
 									<img
 										className="brand-logo-light"
-										src="https://smartdoko.com/images/logo-smartdoko.png"
-										alt
-										width={140}
-										height={37}
-										srcSet="images/agency/logo-retina-inverse-280x74.png 2x"
+										src={Logo}
+										alt="logo"
+										class="w-50"
 									/>
-								</a>
+								</Link>
 								<p>
 									We are an award-winning ecommerce platform, dedicated to the providing best service and products at affordable rate.
 								</p>
@@ -32,6 +33,7 @@ function Footer() {
 									<span>Online Pasal</span>
 									<span>.&nbsp;</span>
 									<span>All Rights Reserved.</span>
+									<span>By Paramatma.</span>
 								</p>
 							</div>
 						</div>
@@ -77,7 +79,7 @@ function Footer() {
 						</div>
 					</div>
 				</div>
-			</footer>
+			</footer >
 		</>
 	);
 }
